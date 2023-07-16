@@ -11,7 +11,7 @@ After that go on each category and set the max speed to whatever limit you want 
 
 If you rather use a max speed for all the categories just set **Config.useCategories** to false and set **Config.maxSpeed** to whatever limit you want to set.
 
-Do not modify the max speed on **Categories 15 and 16** you won't be able to fly the helis and the planes. 
+Do not modify the max speed on **Categories 15 and 16** otherwise you won't be able to fly the helis and the planes. 
 
 ## How does it work?
 The script check when you are in a vehicle, if the vehicle is faster than the limit you set it will set that vehicle max speed to the limit you set on the config
