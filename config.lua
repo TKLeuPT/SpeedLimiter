@@ -1,11 +1,11 @@
 Config = {}
 -- Set Config.kmh to false if you want to use mph
-Config.kmh = false
+Config.kmh = true
 
 -- Set Config.maxSpeed to false if you want to use same speed for all vehicles
 -- Set the max speed for all vehicles on Config.maxSpeed
-Config.useCategories = true
-Config.maxSpeed = 100
+Config.useCategories = false
+Config.maxSpeed = 210
 
 Config.Categories = {
    -- COMPACTS
