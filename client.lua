@@ -1,12 +1,9 @@
+local isSpeedSet = false
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(100)
+		
 		while not IsPedInAnyVehicle(PlayerPedId(), false)
-		do
-			Citizen.Wait(2500)
-		end
-
-		while Config.isSpeedSet and IsPedInAnyVehicle(PlayerPedId(), false)
 		do
 			Citizen.Wait(2500)
 		end
@@ -19,8 +16,17 @@ Citizen.CreateThread(function()
 		end
 
 		if vehicle ~= nil then
-			Config.isSpeedSet = false
+			isSpeedSet = false
 			setSpeed(vehicle)
+		end
+		
+		while isSpeedSet and IsPedInAnyVehicle(PlayerPedId(), false)
+		do
+			local currentVeh = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+			if currentVeh ~= vehicle then
+				setSpeed(currentVeh)
+			end
+			Citizen.Wait(2500)
 		end
 	end
 end)
@@ -40,6 +46,6 @@ function setSpeed(vehicle)
 		end
 
 		SetVehicleMaxSpeed(vehicle, speed)
-		Config.isSpeedSet = true
+		isSpeedSet = true
 	end
 end

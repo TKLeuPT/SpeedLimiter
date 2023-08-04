@@ -3,7 +3,7 @@ games { 'gta5' }
 
 author 'Tekay'
 description 'Speed Limiter for vehicles'
-version '1.1.1'
+version '1.2.0'
 
 -- What to run
 client_scripts {
